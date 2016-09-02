@@ -1,6 +1,6 @@
 ﻿<p id="notice"><%= notice %></p>
 
-<h1>Listing Tasks</h1>
+<h1>やること一覧</h1>
 
 <%= form_tag(:action=>'search') do %> 
  <%= collection_select 'search', 'user', User.all, :id, :username, {selected: @search_user, include_blank: "全員"} %> 
@@ -15,11 +15,11 @@
 <table>
   <thead>
     <tr>
-      <th>Doue</th>
-      <th>Due date</th>
-      <th>Category</th>
-      <th>Name</th>
-      <th>User</th>
+      <th>状況</th>
+      <th>締切日</th>
+      <th>カテゴリー</th>
+      <th>やること</th>
+      <th>ユーザー</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -32,9 +32,9 @@
         <td><%= task.category.categoryname %></td>
         <td><%= task.name %></td>
         <td><%= task.user.username %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', task %></td>
+        <td><%= link_to '編集', edit_task_path(task) %></td>
+        <td><%= link_to '削除', task, method: :delete, data: { confirm: '本当に消しますよ?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Task', new_task_path %>
+<%= link_to '新規登録', new_task_path %>

@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Due date:</strong>
+  <strong>締切日:</strong>
   <%= @task.due_date %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong>カテゴリー:</strong>
   <%= @task.category_id %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>やること:</strong>
   <%= @task.name %>
 </p>
 
 <p>
-  <strong>Doue:</strong>
+  <strong>状況:</strong>
   <%= @task.doue %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>ユーザー:</strong>
   <%= @task.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to '編集', edit_task_path(@task) %> |
+<%= link_to '一覧', tasks_path %>
