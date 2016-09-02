@@ -1,6 +1,13 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <h1>Listing Tasks</h1>
+
+<%= form_tag(:action=>"search") do %> 
+ <%= text_field_tag "search[name]", @search %> 
+ <%= submit_tag "検索" %> 
+ <%= link_to "リセット", tasks_path %> 
+<% end %> 
+
 
 <table>
   <thead>
@@ -19,9 +26,9 @@
       <tr>
         <td><%= task.doue %></td>
         <td><%= task.due_date %></td>
-        <td><%= task.category_id %></td>
+        <td><%= task.category.categoryname %></td>
         <td><%= task.name %></td>
-        <td><%= task.user_id %></td>
+        <td><%= task.user.username %></td>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
